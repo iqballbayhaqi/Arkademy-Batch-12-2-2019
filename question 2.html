@@ -1,0 +1,55 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>question 2</title>
+  </head>
+  <body>
+    <script>
+      const is_username_valid = username => {
+        let lowercaseRe = /[a-z]/g;
+        let uppercaseRe = /[A-Z]/g;
+        let numberRe = /[0-9]/g;
+        let specialcharRe = /[_@#$%!&*]/g;
+        if (
+          lowercaseRe.test(username) &&
+          username.length >= 5 &&
+          username.length <= 9 &&
+          !uppercaseRe.test(username) &&
+          !numberRe.test(username) &&
+          !specialcharRe.test(username)
+        ) {
+          return true;
+        }
+        return false;
+      };
+
+      const is_password_valid = password => {
+        let lowercaseRe = /[a-z]/g;
+        let uppercaseRe = /[A-Z]/g;
+        let numberRe = /[0-9]/g;
+        let specialcharRe = /[_@#$%!&*]/g;
+        console.log(password.match(uppercaseRe))
+        if (
+            uppercaseRe.test(password) >= 1 &&
+            numberRe.test(password) >= 1 &&
+            specialcharRe.test(password) >= 1 &&
+          password.length >= 8
+        ) {
+          return true;
+        }
+        return false;
+      };
+
+      console.log(
+        "username : ",
+        is_username_valid("iqbal") ? "benar" : "salah"
+      );
+      console.log(
+        "password : ",
+        is_password_valid("iqb4%bayhaqi") ? "benar" : "salah"
+      );
+    </script>
+  </body>
+</html>

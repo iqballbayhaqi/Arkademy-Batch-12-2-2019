@@ -1,0 +1,33 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>question 4</title>
+  </head>
+  <body>
+    <script>
+      const groupNumber = number => {
+        let numberRe = /[0-9]/g;
+        const joinedNumber = number.match(numberRe).join("");
+        let groupedNumber = joinedNumber.match(/.{1,3}/g);
+        const countOfLastItemGroupedNumber =
+          groupedNumber[groupedNumber.length - 1].length;
+
+        if (countOfLastItemGroupedNumber === 1) {
+          const newGroupedNumber = [...groupedNumber];
+          newGroupedNumber.splice(-2, 2);
+          groupedNumber = newGroupedNumber.concat(
+            groupedNumber[groupedNumber.length - 2]
+              .concat(groupedNumber[groupedNumber.length - 1])
+              .match(/.{1,2}/g)
+              .join("-")
+          );
+        }
+
+        document.write(groupedNumber.join("-"));
+      };
+      groupNumber("993141 -1 1323 14-2322");
+    </script>
+  </body>
+</html>

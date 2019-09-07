@@ -1,0 +1,49 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>question 3</title>
+  </head>
+  <body>
+    <script>
+      function generateTriangle(count) {
+        let values = ["*"];
+        for (a = 1; values.length <= count - 1; a++) {
+          values.push("&nbsp");
+        }
+        return values;
+      }
+
+      const printTriangle = num => {
+        const values = generateTriangle(num);
+        console.log(generateTriangle(num));
+        for (var i = 1; i <= num; i++) {
+          for (var j = 1; j <= i; j++) {
+            document.write("&nbsp&nbsp");
+          }
+          for (var k = i; k <= num; k++) {
+            if (i === 1 || i === num) {
+              document.write("*");
+            }else if (k === i && i !== 1 && i !== num) {
+                document.write("*");
+            }else {
+              document.write("&nbsp&nbsp");
+            }
+          }
+          for (var l = i + 1; l <= num; l++) {
+            if (i === 1 || i === num) {
+              document.write("*");
+            }else if (l === num && i !== 1 && i !== num) {
+                document.write("*")
+            }else {
+              document.write("&nbsp&nbsp");
+            }
+          }
+          document.write("<br>");
+        }
+      };
+      printTriangle(4);
+    </script>
+  </body>
+</html>
