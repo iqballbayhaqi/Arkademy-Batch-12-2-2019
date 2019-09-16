@@ -1,4 +1,4 @@
-# Arkademy_2019
+# Arkademy-Batch-12-2-2019
 This Repository is specifically for Bootcamp  Arkademy program Batch 12 - 2 
 
 * Question 1
